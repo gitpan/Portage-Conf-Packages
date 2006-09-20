@@ -9,7 +9,7 @@ use Tie::File;
 our @ISA = qw(Exporter);
 our @EXPORT = qw(new validatePackage Use);
 our @EXPORT_OK = qw();
-our $VERSION = 1.00;
+our $VERSION = 1.3;
 
 sub new {
 	my $invoke = shift;
