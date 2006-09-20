@@ -13,7 +13,7 @@ our $VERSION = 1.00;
 
 =head1 NAME
 Portage::Conf::Packages - Function collection for the Gentoo Portage package.* files.
-
+=cut
 =head1 SYNOPSIS
 	use Portage::Conf::Packages;
 	$mod = Portage::Conf::Packages->new(UsePath => './package.use');
@@ -22,6 +22,7 @@ Portage::Conf::Packages - Function collection for the Gentoo Portage package.* f
 			"net-im/skype" => ["-arts", "oss", "dbus"]
 		);
 	}
+=cut
 =head1 DESCRIPTION
 This Module is able to modifie your /etc/portage/package.* files
 =cut
@@ -41,7 +42,7 @@ sub new {
 
 =head1 METHODS
 Discription of the Methods
-
+=cut
 =head2 validatePackage
 Validates a package with eix.
 	$epack->validatePackage("net-im/skype");
@@ -140,11 +141,11 @@ sub Use {
 1;
 
 =head1 BUGS
-Please report to https://opensvn.csie.org/traccgi/epackageuse
-
-=AUTHOR
+Please report to L<https://opensvn.csie.org/traccgi/epackageuse>
+=cut
+=head1 AUTHOR
 Tristan Leo filecorpse::at::gmail.com
-
+=cut
 =head1 COPYRIGHT
 
 Copyright (c) 2006 Tristan Leo All rights reserved.
