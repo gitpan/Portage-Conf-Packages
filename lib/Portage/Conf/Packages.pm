@@ -11,22 +11,6 @@ our @EXPORT = qw(new validatePackage Use);
 our @EXPORT_OK = qw();
 our $VERSION = 1.00;
 
-=head1 NAME
-Portage::Conf::Packages - Function collection for the Gentoo Portage package.* files.
-=cut
-=head1 SYNOPSIS
-	use Portage::Conf::Packages;
-	$mod = Portage::Conf::Packages->new(UsePath => './package.use');
-	if ($mod->validatePackage("net-im/skype")) {
-		$mod->Use(
-			"net-im/skype" => ["-arts", "oss", "dbus"]
-		);
-	}
-=cut
-=head1 DESCRIPTION
-This Module is able to modifie your /etc/portage/package.* files
-=cut
-
 sub new {
 	my $invoke = shift;
 	my $class = ref($invoke) || $invoke;
@@ -40,13 +24,6 @@ sub new {
 	return bless $self,$class;
 }
 
-=head1 METHODS
-Discription of the Methods
-=cut
-=head2 validatePackage
-Validates a package with eix.
-	$epack->validatePackage("net-im/skype");
-=cut
 
 sub validatePackage {
 	my $self = shift;
@@ -74,12 +51,6 @@ sub validatePackage {
 	return $ret;
 }
 
-=head2 Use
-Edit or add the useflags for given packages and flags
-	$mod->Use(
-		"net-im/skype" => ["-arts", "oss", "dbus"]
-	);
-=cut
 
 sub Use {
 	my $self = shift;
@@ -140,12 +111,63 @@ sub Use {
 
 1;
 
+__END__
+
+=head1 NAME
+
+Portage::Conf::Packages - Function collection for the Gentoo Portage package files.
+
+
+=head1 SYNOPSIS
+
+	use Portage::Conf::Packages;
+	$mod = Portage::Conf::Packages->new(UsePath => './package.use');
+	if ($mod->validatePackage("net-im/skype")) {
+		$mod->Use(
+			"net-im/skype" => ["-arts", "oss", "dbus"]
+		);
+	}
+
+
+=head1 DESCRIPTION
+
+This Module is able to modifie your /etc/portage/package.* files
+
+
+=head1 METHODS
+
+Discription of the Methods
+
+
+=over 4
+
+=item * validatePackage
+
+Validates a package with eix.
+	$epack->validatePackage("net-im/skype");
+
+
+=item * Use
+
+Edit or add the useflags for given packages and flags
+	$mod->Use(
+		"net-im/skype" => ["-arts", "oss", "dbus"]
+	);
+
+
+=back
+
+
 =head1 BUGS
-Please report to L<https://opensvn.csie.org/traccgi/epackageuse>
-=cut
+
+Please report to https://opensvn.csie.org/traccgi/epackageuse
+
+
 =head1 AUTHOR
+
 Tristan Leo filecorpse::at::gmail.com
-=cut
+
+
 =head1 COPYRIGHT
 
 Copyright (c) 2006 Tristan Leo All rights reserved.
@@ -153,6 +175,6 @@ Copyright (c) 2006 Tristan Leo All rights reserved.
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-=cut
 
+=cut
 # vim:ts=8:sw=4:ft=perl
